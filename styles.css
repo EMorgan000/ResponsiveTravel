@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+html {
+background-color: #EBE9E9;
+}
+
+div.header h1 {
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  background-image: url(trav.jpg);
+  background-repeat: no-repeat;
+  color: #D7816A;
+}
+
+h1 {
+  padding-top: 10px;
+  margin-right: 20px;
+  font-size: 2.5em;
+  font-family: "Helvetica", sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+}
+
+.info1, .info2, .info3 {
+  float: left;
+  width: 30%;
+}
+
+.info2 {
+  clear: right;
+  margin-left: 3.5%;
+}
+
+.info3 {
+margin-left: 3.5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  text-decoration: none;
+  color: #D7816A;
+  font-size: 1.2em;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  position: absolute;
+  top: 800px;
+  left: 500px;
+  background-color: #565554;
+  color: white;
+  padding: 10px;
+  margin: auto;
+}
+
+/*Phone styles*/
+@media screen and (max-width: 500px) {
+  div.header h1 {
+    background: white;
+    font-size: 1.5em;
+    height: 100px;
+  }
+  .info1, .info2, .info3 {
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-left: 0;
+  }
+  footer {
+    position: absolute;
+    top: 1500px;
+    left: 65px;
+  }
+
+  img {
+    margin-left: 5%;
+  }
+  p {
+    display: block;
+    line-height: 1em;
+    text-align: center;
+  }
+}
