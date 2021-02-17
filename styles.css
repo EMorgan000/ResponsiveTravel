@@ -1,47 +1,85 @@
 @charset "UTF-8";
 
+/* Eric Morgan
+    2/16/21
+    Styles for Responsive Travel Project
+    filename: styles.css
+ */
+/*Phone Styles*/
+/*Consistent font throughout*/
 html {
-background-color: #EBE9E9;
+  background-color: #ECE4B7;
+  font-family: 'Roboto Condensed', Verdana, sans-serif;
 }
 
+/*Header for full page hidden until desktop styles*/
 div.header h1 {
+  visibility: hidden;
+  background: white;
+  font-size: 1.3em;
+  height: 50px;
   text-align: center;
-  width: 100%;
-  height: 200px;
-  background-image: url(trav.jpg);
-  background-repeat: no-repeat;
-  color: #D7816A;
+  color: #EF6F6C;
 }
 
-h1 {
-  padding-top: 10px;
-  margin-right: 20px;
-  font-size: 2.5em;
-  font-family: "Helvetica", sans-serif;
-}
-
-body {
+/* Styles the navigation menu */
+/*Only shows for the phone viewport*/
+.topnav {
+  overflow: hidden;
+  background-color: #E8D2AE;
   position: relative;
 }
 
+/* Hide the links inside the navigation menu */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: #EF6F6C;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.2em;
+  display: block;
+}
+
+/* Styles the hamburger menu */
+.topnav a.icon {
+  background: #3C6E71;
+  color: white;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Style the active link */
+.active {
+  background-color: #E8D2AE;
+}
+
+/*Styles the company title in the banner*/
+h1 {
+  padding-top: 10px;
+  margin-right: 20px;
+}
+
+/*Centers the headers under each image*/
 h2 {
   text-align: center;
+  text-decoration: underline;
 }
 
+/*Each image floats left stacked on one another*/
 .info1, .info2, .info3 {
   float: left;
-  width: 30%;
+  clear: both;
+  width: 100%;
+  margin-left: 0;
 }
 
-.info2 {
-  clear: right;
-  margin-left: 3.5%;
-}
-
-.info3 {
-margin-left: 3.5%;
-}
-
+/*Nav styles for larger viewports*/
 ul {
   list-style-type: none;
 }
@@ -51,52 +89,176 @@ li {
 }
 
 li a {
+  visibility: hidden;
   display: block;
   padding: 10px 5px 10px 5px;
   text-decoration: none;
-  color: #D7816A;
+  color: #EF6F6C;
   font-size: 1.2em;
 }
 
+/*Underlines each link on hover*/
 li a:hover {
   text-decoration: underline;
 }
 
-footer {
-  position: absolute;
-  top: 800px;
-  left: 500px;
-  background-color: #565554;
-  color: white;
-  padding: 10px;
-  margin: auto;
+/*Title text hyperlink stays pink without underline*/
+h1 a {
+  text-decoration: none;
+  color: #EF6F6C;
 }
 
-/*Phone styles*/
-@media screen and (max-width: 500px) {
+/*Styles footer for phone viewport only*/
+footer {
+  position: absolute;
+  top: 1550px;
+  left: 60px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+/*Helps to center images on phone viewport*/
+img {
+  margin-left: 5%;
+}
+
+/*Text displayed in pink boxes*/
+p {
+  display: block;
+  line-height: 1em;
+  text-align: left;
+  padding: 5px;
+  background-color: #F39291;
+}
+
+/*Tablet Styles*/
+@media screen and (min-width: 568px) {
+
+  /*Hamburger menu switches to nav with h1 heading*/
   div.header h1 {
-    background: white;
+    visibility: visible;
+    text-align: center;
     font-size: 1.5em;
-    height: 100px;
-  }
-  .info1, .info2, .info3 {
-    float: left;
-    clear: both;
     width: 100%;
-    margin-left: 0;
-  }
-  footer {
-    position: absolute;
-    top: 1500px;
-    left: 65px;
+    height: 100px;
+    background-image: url(trav.jpg);
+    background-repeat: no-repeat;
   }
 
-  img {
-    margin-left: 5%;
-  }
+  /*Removes padding from before, adds larger text*/
   p {
+    padding: 0;
+    font-size: 13pt;
+  }
+
+  /*Hides the hamburger menu*/
+  .topnav {
+    visibility: hidden;
+    display: none;
+  }
+
+  /*Reveals the nav with h1 title*/
+  li a {
+    visibility: visible;
+  }
+
+  /*Centers images*/
+  img {
     display: block;
-    line-height: 1em;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*Repositions footer*/
+  footer {
+    position: absolute;
+    top: 1425px;
+    left: 200px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  /*Styles for a larger tablet*/
+  /*Increases the height and font size of title banner*/
+  div.header h1 {
+    font-size: 2em;
+    height: 150px;
+  }
+
+  /*Increases p font size a bit, adds padding*/
+  p {
+    font-size: 15pt;
+    padding: 2px;
+  }
+
+  /*Another reposition*/
+  footer {
+    top: 1525px;
+    left: 345px;
+  }
+
+  /*h2 headings get larger*/
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+/*Desktop Styles*/
+@media screen and (min-width: 1000px) {
+
+  /*Banner at max height*/
+  div.header h1 {
+    height: 200px;
+  }
+
+  /*Positions text farther from nav, font size max*/
+  h1 a {
+    padding-top: 10px;
+    margin-right: 35px;
+    font-size: 2em;
+  }
+
+  body {
+    position: relative;
+  }
+
+  /*p text smaller than tablet p text*/
+  p {
+    padding: 5px;
+    font-size: 14pt;
+  }
+
+  /*Images and text float next to each other*/
+  .info1, .info2, .info3 {
+    float: left;
+    width: 30%;
+  }
+
+  /*Space between images 2 and 3*/
+  .info2 {
+    clear: right;
+    margin-left: 3.5%;
+  }
+
+  .info3 {
+    margin-left: 3.5%;
+    clear: right;
+  }
+
+  /*nav elements lie further within the banner*/
+  li a {
+    visibility: visible;
+    display: block;
+    padding: 10px 5px 10px 5px;
+    font-size: 1.2em;
+  }
+
+  /* Footer's final position*/
+  footer {
+    position: absolute;
+    top: 800px;
+    left: 475px;
   }
 }
